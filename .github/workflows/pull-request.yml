@@ -1,0 +1,20 @@
+name: Pull request checks
+on: [pull_request]
+
+jobs:
+  lint-buld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm ci -D npm-install-peers
+
+      - name: Build
+        run: |
+          npx npm-install-peers
+          npm run lint:check

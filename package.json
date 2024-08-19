@@ -1,0 +1,90 @@
+{
+  "name": "@kapto/typesuiserver",
+  "version": "1.1.0",
+  "description": "@kapto/typesuiserver project",
+  "main": "./dist/index.js",
+  "directories": {},
+  "bin": {
+    "typesuiserver": "./dist/index.js"
+  },
+  "scripts": {
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "check-types": "tsc -p tsconfig.json --noEmit --skipLibCheck",
+    "build": "tsup-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunstrikemd/kapto-types-uiserver.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunstrikemd/kapto-types-uiserver/issues"
+  },
+  "homepage": "https://github.com/sunstrikemd/kapto-types-uiserver#readme",
+  "author": "KAPTO Ai Ltd",
+  "keywords": [
+    "generate types"
+  ],
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.7.14",
+    "@types/express": "^4.17.13",
+    "@types/express-http-proxy": "^1.6.2",
+    "@types/node": "^18.19.45",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-formatjs": "^4.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.1",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sort-class-members": "^1.9.0",
+    "eslint-plugin-unicorn": "^35.0.0",
+    "husky": "^4.3.0",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.1.2",
+    "tsup": "^8.2.4",
+    "typescript": "^4.3.5"
+  },
+  "browserslist": [
+    "> 0.25%"
+  ],
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "bash -c 'npm run check-types'",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss",
+      "prettier --parser css --write"
+    ],
+    "*.css": [
+      "stylelint --syntax=css",
+      "prettier --parser css --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  }
+}
