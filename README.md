@@ -10,6 +10,5 @@
     "PROXY_ADDRESS": "localhost",
     "PROXY_PORT": 8000,
     "SERVER_PORT": 3000
-  ]
 }
 ```
