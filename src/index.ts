@@ -6,7 +6,7 @@ import { Configuration } from '../types/Configuration';
 import runServer from './runServer';
 
 const fsPromisses = fs.promises;
-const defaultConfigFileName = 'types.config.json';
+const defaultConfigFileName = 'uiserver.config.json';
 
 const main = async () => {
 	let configPath = process.argv.find((item) => item.includes('--config-path'));
