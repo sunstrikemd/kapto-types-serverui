@@ -1,6 +1,6 @@
 {
   "name": "@kapto/typesuiserver",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "@kapto/typesuiserver project",
   "main": "./dist/index.js",
   "directories": {},
